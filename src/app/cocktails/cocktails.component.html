@@ -1,0 +1,21 @@
+<h2>My Cocktails</h2>
+
+<div>
+  <label>Cocktail name:
+    <input #cocktailName />
+  </label>
+  <!-- (click) 入力値をadd()に渡したあと、入力をクリアする -->
+  <button (click)="add(cocktailName.value); cocktailName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="cocktails">
+  <li *ngFor="let cocktail of cocktails">
+    <a routerLink="/detail/{{cocktail.id}}">
+      <span class="badge">{{cocktail.id}}</span> {{cocktail.name}}
+    </a>
+    <button class="delete" title="delete cocktail"
+    (click)="delete(cocktail)">x</button>
+  </li>
+</ul>

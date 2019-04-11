@@ -1,12 +1,12 @@
 <div id="search-component">
-  <h4>Hero Search</h4>
+  <h4>Cocktail Search</h4>
 
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 
   <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async" >
-      <a routerLink="/detail/{{hero.id}}">
-        {{hero.name}}
+    <li *ngFor="let cocktail of cocktails$ | async" >
+      <a routerLink="/detail/{{cocktail.id}}">
+        {{cocktail.name}}
       </a>
     </li>
   </ul>

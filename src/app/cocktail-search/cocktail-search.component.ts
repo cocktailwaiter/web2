@@ -6,19 +6,19 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Cocktail } from '../cocktail';
+import { CocktailService } from '../cocktail.service';
 
 @Component({
-  selector: 'app-hero-search',
-  templateUrl: './hero-search.component.html',
-  styleUrls: [ './hero-search.component.css' ]
+  selector: 'app-cocktail-search',
+  templateUrl: './cocktail-search.component.html',
+  styleUrls: [ './cocktail-search.component.css' ]
 })
-export class HeroSearchComponent implements OnInit {
-  heroes$: Observable<Hero[]>;
+export class CocktailSearchComponent implements OnInit {
+  cocktails$: Observable<Cocktail[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private heroService: HeroService) {}
+  constructor(private cocktailService: CocktailService) {}
 
   // 検索語をobservableストリームにpushする
   search(term: string): void {
@@ -26,7 +26,7 @@ export class HeroSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroes$ = this.searchTerms.pipe(
+    this.cocktails$ = this.searchTerms.pipe(
       // 各キーストロークの後、検索前に300ms待つ
       debounceTime(300),
 
@@ -34,7 +34,7 @@ export class HeroSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // 検索語が変わる度に、新しい検索observableにスイッチする
-      switchMap((term: string) => this.heroService.searchHeroes(term)),
+      switchMap((term: string) => this.cocktailService.searchCocktails(term)),
     );
   }
 }
