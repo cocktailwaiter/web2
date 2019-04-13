@@ -8,7 +8,7 @@ import { CocktailService }  from '../cocktail.service';
 @Component({
   selector: 'app-cocktail-detail',
   templateUrl: './cocktail-detail.component.html',
-  styleUrls: [ './cocktail-detail.component.css' ]
+  styleUrls: [ './cocktail-detail.component.scss' ]
 })
 export class CocktailDetailComponent implements OnInit {
   @Input() cocktail: Cocktail;

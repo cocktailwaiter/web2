@@ -12,7 +12,7 @@ import { CocktailService } from '../cocktail.service';
 @Component({
   selector: 'app-cocktail-search',
   templateUrl: './cocktail-search.component.html',
-  styleUrls: [ './cocktail-search.component.css' ]
+  styleUrls: [ './cocktail-search.component.scss' ]
 })
 export class CocktailSearchComponent implements OnInit {
   cocktails$: Observable<Cocktail[]>;
