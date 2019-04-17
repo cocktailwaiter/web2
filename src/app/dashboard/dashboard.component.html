@@ -1,11 +1,13 @@
-<h3>Top Cocktails</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let cocktail of cocktails" class="col-1-4"
-      routerLink="/detail/{{cocktail.id}}">
-    <div class="module cocktail">
-      <h4>{{cocktail.name}}</h4>
-    </div>
-  </a>
-</div>
+<article>
+  <h3>Top Cocktails</h3>
+  <div class="grid grid-pad">
+    <a *ngFor="let cocktail of cocktails" class="col-1-4"
+        routerLink="/detail/{{cocktail.id}}">
+      <div class="module cocktail">
+        <h4>{{cocktail.name}}</h4>
+      </div>
+    </a>
+  </div>
 
-<app-cocktail-search></app-cocktail-search>
+  <app-cocktail-search></app-cocktail-search>
+</article>

@@ -20,7 +20,7 @@ export class CocktailService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  /** サーバーからヒーローを取得する */
+  /** サーバーからカクテルを取得する */
   getCocktails (): Observable<Cocktail[]> {
     return this.http.get<Cocktail[]>(this.cocktailsUrl)
       .pipe(
@@ -29,7 +29,7 @@ export class CocktailService {
       );
   }
 
-  /** IDによりヒーローを取得する。idが見つからない場合は`undefined`を返す。 */
+  /** IDによりカクテルを取得する。idが見つからない場合は`undefined`を返す。 */
   getCocktailNo404<Data>(id: number): Observable<Cocktail> {
     const url = `${this.cocktailsUrl}/?id=${id}`;
     return this.http.get<Cocktail[]>(url)
@@ -43,7 +43,7 @@ export class CocktailService {
       );
   }
 
-  /** IDによりヒーローを取得する。見つからなかった場合は404を返却する。 */
+  /** IDによりカクテルを取得する。見つからなかった場合は404を返却する。 */
   getCocktail(id: number): Observable<Cocktail> {
     const url = `${this.cocktailsUrl}/${id}`;
     return this.http.get<Cocktail>(url).pipe(
@@ -52,10 +52,10 @@ export class CocktailService {
     );
   }
 
-  /* 検索語を含むヒーローを取得する */
+  /* 検索語を含むカクテルを取得する */
   searchCocktails(term: string): Observable<Cocktail[]> {
     if (!term.trim()) {
-      // 検索語がない場合、空のヒーロー配列を返す
+      // 検索語がない場合、空のカクテル配列を返す
       return of([]);
     }
     return this.http.get<Cocktail[]>(`${this.cocktailsUrl}/?name=${term}`).pipe(
@@ -66,7 +66,7 @@ export class CocktailService {
 
   //////// Save methods //////////
 
-  /** POST: サーバーに新しいヒーローを登録する */
+  /** POST: サーバーに新しいカクテルを登録する */
   addCocktail (cocktail: Cocktail): Observable<Cocktail> {
     return this.http.post<Cocktail>(this.cocktailsUrl, cocktail, httpOptions).pipe(
       tap((newCocktail: Cocktail) => this.log(`added cocktail w/ id=${newCocktail.id}`)),
@@ -74,7 +74,7 @@ export class CocktailService {
     );
   }
 
-  /** DELETE: サーバーからヒーローを削除 */
+  /** DELETE: サーバーからカクテルを削除 */
   deleteCocktail (cocktail: Cocktail | number): Observable<Cocktail> {
     const id = typeof cocktail === 'number' ? cocktail : cocktail.id;
     const url = `${this.cocktailsUrl}/${id}`;
@@ -85,7 +85,7 @@ export class CocktailService {
     );
   }
 
-  /** PUT: サーバー上でヒーローを更新 */
+  /** PUT: サーバー上でカクテルを更新 */
   updateCocktail (cocktail: Cocktail): Observable<any> {
     return this.http.put(this.cocktailsUrl, cocktail, httpOptions).pipe(
       tap(_ => this.log(`updated cocktail id=${cocktail.id}`)),

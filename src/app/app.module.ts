@@ -14,6 +14,7 @@ import { CocktailDetailComponent }  from './cocktail-detail/cocktail-detail.comp
 import { CocktailsComponent }      from './cocktails/cocktails.component';
 import { CocktailSearchComponent }  from './cocktail-search/cocktail-search.component';
 import { MessagesComponent }    from './messages/messages.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { MessagesComponent }    from './messages/messages.component';
     CocktailsComponent,
     CocktailDetailComponent,
     MessagesComponent,
-    CocktailSearchComponent
+    CocktailSearchComponent,
+    HeaderComponent
   ],
   bootstrap: [ AppComponent ]
 })

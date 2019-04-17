@@ -1,0 +1,17 @@
+/* HeaderComponent's private SCSS styles */
+
+h1 {
+  margin: 0px;
+  background-color: #55c500;
+  font-family: -apple-system,Segoe UI,Helvetica Neue,Hiragino Kaku Gothic ProN,"メイリオ",meiryo,sans-serif;
+  font-size: 1.4rem;
+
+  text-shadow: 3px 3px 3px #999999;
+  text-align: center;
+//   background-color: #110000;
+  & > a {
+    color: #fff;
+    font-family: Batang;
+    letter-spacing: 5px;
+  }
+}
