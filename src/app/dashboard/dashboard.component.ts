@@ -17,7 +17,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getCocktails(): void {
-    this.cocktailService.getCocktails()
-      .subscribe(cocktails => this.cocktails = cocktails);
+    this.cocktailService.getCocktails().subscribe((response) => {
+      const cocktails = response['data'];
+      this.cocktails = cocktails;
+    });
   }
 }

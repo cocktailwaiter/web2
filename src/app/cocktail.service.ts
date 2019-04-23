@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Cocktail } from './cocktail';
 import { MessageService } from './message.service';
+
+import * as moment from 'moment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,7 +16,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class CocktailService {
 
-  private cocktailsUrl = 'api/cocktails';  // Web APIのURL
+  private cocktailsUrl = 'https://api.cocktailwaiter.xyz/v1/cocktails/random';  // Web APIのURL
 
   constructor(
     private http: HttpClient,
@@ -22,7 +24,10 @@ export class CocktailService {
 
   /** サーバーからカクテルを取得する */
   getCocktails (): Observable<Cocktail[]> {
-    return this.http.get<Cocktail[]>(this.cocktailsUrl)
+    const seed = moment().unix().toString(); // Seed値としてエポックタイムを使用
+    const params = new HttpParams().set('seed', seed);
+    const options = {params};
+    return this.http.get<Cocktail[]>(this.cocktailsUrl, options)
       .pipe(
         tap(cocktails => this.log('fetched cocktails')),
         catchError(this.handleError<Cocktail[]>('getCocktails', []))
