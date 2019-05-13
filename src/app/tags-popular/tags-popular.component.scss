@@ -1,0 +1,35 @@
+/* TagsPopularComponent's private SCSS styles */
+* {
+  color: aquamarine;
+}
+
+ul {
+  list-style: none;
+}
+
+.button {
+  margin-bottom: 9px;
+  padding-bottom: 9px;
+  padding: 0px 9px 0px 9px;
+  border: 1px solid aquamarine;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  width: auto;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50px;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    -webkit-transform: translateY(2px);
+    transform: translateY(5px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+}

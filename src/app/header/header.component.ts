@@ -7,7 +7,7 @@ import { AppRoutingModule } from '../app-routing.module';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  title = 'Qiita';
+  title = 'COCKTAIL WAITER';
 
   constructor(
     private route: AppRoutingModule

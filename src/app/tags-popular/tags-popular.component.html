@@ -1,0 +1,8 @@
+<ul class="tags-popular">
+  <li *ngFor="let tag of tags">
+    <a routerLink="/detail/{{tag.id}}">
+      <span class="button">{{tag.name}}</span>
+    </a>
+  </li>
+</ul>
+<ul><li><a (click)="openModal('custom-modal-2')" class="button">すべてのタグを表示</a></li></ul>

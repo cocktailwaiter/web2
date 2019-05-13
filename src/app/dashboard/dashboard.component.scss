@@ -93,13 +93,13 @@ h4 {
 //   font-size: 16px;
 // }
 
-// #main-content {
-//   /* background-color: aqua; */
-//   display: flex;
-//   flex-flow: row wrap;
-//   flex: 1;
-//   justify-content: space-around;
-// }
+#main-content {
+  /* background-color: aqua; */
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+  justify-content: space-around;
+}
 
 .card {
   padding: 16px;
@@ -126,4 +126,14 @@ $white: #fff;
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+app-tags {
+    /* background-color: indianred; */
+    top: 0px;
+    position: sticky;
+    width: 300px;
+    min-width: 25%;
+    justify-content: flex-end;
+    color: aquamarine;
 }

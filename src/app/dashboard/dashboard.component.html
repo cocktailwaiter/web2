@@ -1,5 +1,5 @@
 <article id="content">
-  <section id="main-content" class="grid grid-pad">
+  <section id="main-content">
 
     <div *ngFor="let cocktail of cocktails" class="card">
       <a class="col-1-4" routerLink="/detail/{{cocktail.id}}">
@@ -10,4 +10,5 @@
     </div>
 
   </section>
+  <app-tags></app-tags>
 </article>
