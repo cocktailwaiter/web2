@@ -1,124 +1,33 @@
 /* DashboardComponent's private SCSS styles */
+$mycolor: aquamarine;
 
-[class*='col-'] {
-  float: left;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  &:last-of-type {
-    padding-right: 0;
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  &:after, &:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
-h3 {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-h4 {
-  position: relative;
-}
-
-.grid {
-  margin: 0;
-}
-
-.col-1-4 {
-  width: 25%;
-}
-
-.module {
-  padding: 20px;
-  text-align: center;
-  color: #eee;
-  max-height: 120px;
-  min-width: 120px;
-  background-color: #607d8b;
-  border-radius: 2px;
-  &:hover {
-    background-color: #eee;
-    cursor: pointer;
-    color: #607d8b;
-  }
-}
-
-.grid-pad {
-  padding: 10px 0;
-  > [class*='col-']:last-of-type {
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .module {
-    font-size: 10px;
-    max-height: 75px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    margin: 0;
-  }
-  .module {
-    min-width: 60px;
-  }
-}
-
-#content {
+#dashboard-wrap {
   background: url("/assets/img/dashboard-background.jpg");
-  background-repeat:no-repeat;
+  background-repeat: round;
   background-size: 100%;
   display: flex;
   height: 100vh;
   overflow-y: auto;
-}
-
-// #contents {
-//   z-index: 0;
-//   font-size: 16px;
-// }
-
-#main-content {
-  /* background-color: aqua; */
-  display: flex;
-  flex-flow: row wrap;
-  flex: 1;
-  justify-content: space-around;
+  padding: 15px;
+  width: 100%;
+  min-width: 210px;
 }
 
 .card {
-  padding: 16px;
-  display: flex;
-}
-
-$aquamarine: aquamarine;
-$white: #fff;
-
-.cocktail-name {
-	color: $aquamarine;
-	border: 1px solid $white;
-	display: flex;
+  color: $mycolor;
+  background-color: unset;
+  margin: 15px;
+	color: $mycolor;
+	border: 1px solid white;
 	text-align: center;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
 	width: 200px;
 	height: 300px;
+	a {
+  color: $mycolor;
+  }
 	img {
 		width: 85%;
 		height: 85%;
@@ -128,12 +37,9 @@ $white: #fff;
 	}
 }
 
-app-tags {
-    /* background-color: indianred; */
-    top: 0px;
-    position: sticky;
-    width: 300px;
-    min-width: 25%;
-    justify-content: flex-end;
-    color: aquamarine;
+app-tags-popular {
+  min-width: 210px;
+  padding: 0px 9px 0px 9px;
+  top: 0px;
+  position: sticky;
 }

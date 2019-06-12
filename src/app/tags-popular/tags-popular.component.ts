@@ -4,7 +4,7 @@ import { TagService } from '../tag.service';
 import { ModalService } from '../../service/modal.service';
 
 @Component({
-  selector: 'axxxpp-tags-popular',
+  selector: 'app-tags-popular',
   templateUrl: './tags-popular.component.html',
   styleUrls: ['./tags-popular.component.scss']
 })

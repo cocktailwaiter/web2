@@ -15,7 +15,7 @@ import { CocktailsComponent }      from './cocktails/cocktails.component';
 import { CocktailSearchComponent }  from './cocktail-search/cocktail-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { HeaderComponent } from './header/header.component';
-import { TagsComponent } from './tags/tags.component';
+import { TagsPopularComponent } from './tags-popular/tags-popular.component';
 
 @NgModule({
   imports: [
@@ -39,7 +39,7 @@ import { TagsComponent } from './tags/tags.component';
     MessagesComponent,
     CocktailSearchComponent,
     HeaderComponent,
-    TagsComponent
+    TagsPopularComponent
   ],
   bootstrap: [ AppComponent ]
 })

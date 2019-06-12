@@ -1,14 +1,11 @@
-<article id="content">
-  <section id="main-content">
-
-    <div *ngFor="let cocktail of cocktails" class="card">
-      <a class="col-1-4" routerLink="/detail/{{cocktail.id}}">
-        <div class="cocktail-name">
-          <h4>{{cocktail.name}}</h4>
-        </div>
+<article id="dashboard-wrap">
+  <section class="container">
+    <div class="row">
+      <a *ngFor="let cocktail of cocktails" routerLink="/detail/{{cocktail.id}}" class="card">
+        <h4>{{cocktail.name}}</h4>
       </a>
     </div>
-
   </section>
-  <app-tags></app-tags>
+
+  <app-tags-popular></app-tags-popular>
 </article>
