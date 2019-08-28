@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { environment } from '../environments/environment'
 import { Cocktail } from './cocktail';
 import { MessageService } from './message.service';
 
@@ -16,7 +17,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class CocktailService {
 
-  private cocktailsUrl = 'https://api.cocktailwaiter.xyz/v1/cocktails/random';  // Web APIのURL
+  private cocktailsUrl = `${environment.CWApiUrlBase}/v1/cocktails`;
 
   constructor(
     private http: HttpClient,

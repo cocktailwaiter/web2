@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { environment } from '../environments/environment'
 import { Tag } from './tag';
 import { MessageService } from './message.service';
 
@@ -16,7 +17,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class TagService {
 
-  private tagsUrl = 'http://dev.api.cocktailwaiter.xyz:8888/v1/tags/popular';  // Web APIのURL
+  private tagsUrl = `${environment.CWApiUrlBase}/v1/tags`;
 
   constructor(
     private http: HttpClient,
