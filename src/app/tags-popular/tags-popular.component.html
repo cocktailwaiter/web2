@@ -1,7 +1,12 @@
 <ul class="tags-popular">
   <li *ngFor="let tag of tags">
+    <a [routerLink]="['/dashboard']" [queryParams]="{'tags[]': tag.name}">
+      <span class="button" class="button">{{tag.name}}</span>
+    </a>
+  </li>
+  <li *ngFor="let tag of tags">
     <a routerLink="/detail/{{tag.id}}">
-      <span class="button">{{tag.name}}</span>
+      <span class="button" class="button">{{tag.name}}</span>
     </a>
   </li>
 </ul>

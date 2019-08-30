@@ -23,12 +23,12 @@ export class TagService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  /** サーバーからカクテルを取得する */
+  /** サーバーからタグを取得する */
   getTags (): Observable<Tag[]> {
     const seed = moment().unix().toString(); // Seed値としてエポックタイムを使用
     const params = new HttpParams().set('seed', seed);
     const options = {params};
-    return this.http.get<Tag[]>(this.tagsUrl, options)
+    return this.http.get<Tag[]>(`${this.tagsUrl}/popular`, options)
       .pipe(
         tap(tags => this.log('fetched tags')),
         catchError(this.handleError<Tag[]>('getTags', []))

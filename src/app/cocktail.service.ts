@@ -8,8 +8,6 @@ import { environment } from '../environments/environment'
 import { Cocktail } from './cocktail';
 import { MessageService } from './message.service';
 
-import * as moment from 'moment';
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -24,9 +22,7 @@ export class CocktailService {
     private messageService: MessageService) { }
 
   /** サーバーからカクテルを取得する */
-  getCocktails (): Observable<Cocktail[]> {
-    const seed = moment().unix().toString(); // Seed値としてエポックタイムを使用
-    const params = new HttpParams().set('seed', seed);
+  getCocktails (params): Observable<Cocktail[]> {
     const options = {params};
     return this.http.get<Cocktail[]>(this.cocktailsUrl, options)
       .pipe(

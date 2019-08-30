@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Tag } from '../tag';
 import { TagService } from '../tag.service';
@@ -12,6 +13,7 @@ export class TagsPopularComponent implements OnInit {
   tags: Tag[];
 
   constructor(
+    private route: ActivatedRoute,
     private tagService: TagService,
     private modalService: ModalService
   ) { }

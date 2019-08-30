@@ -14,11 +14,11 @@ export class CocktailsComponent implements OnInit {
   constructor(private cocktailService: CocktailService) { }
 
   ngOnInit() {
-    this.getCocktails();
+    this.getCocktails({});
   }
 
-  getCocktails(): void {
-    this.cocktailService.getCocktails()
+  getCocktails(params): void {
+    this.cocktailService.getCocktails(params)
     .subscribe(cocktails => this.cocktails = cocktails);
   }
 
