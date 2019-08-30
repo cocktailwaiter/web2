@@ -1,7 +1,7 @@
 <article id="dashboard-wrap">
   <section class="container">
     <div class="row">
-      <a *ngFor="let cocktail of cocktails" routerLink="/detail/{{cocktail.id}}" class="card">
+      <a *ngFor="let cocktail of cocktails" href="https://ja.wikipedia.org/wiki/{{cocktail.name}}" class="card">
         <h4>{{cocktail.name}}</h4>
       </a>
     </div>
